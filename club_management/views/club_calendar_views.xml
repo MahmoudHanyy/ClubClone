@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="calendar_event_view_form_members_inherit" model="ir.ui.view">
+        <field name="name">calendar.event.view.form.members.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="members" string="Members">
+                    <field name="member_ids" widget="one2many">
+                        <tree string="Members">
+                            <field name="name" />
+                            <field name="email" />
+                            <field name="phone" />
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="name" />
+                                <field name="email" />
+                                <field name="phone" />
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

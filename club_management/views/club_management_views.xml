@@ -9,13 +9,13 @@
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
+
     <record id="action_open_club_calendar_view" model="ir.actions.act_window">
         <field name="name">Open Calendar</field>
         <field name="res_model">calendar.event</field>
-        <field name="view_mode">calendar;</field>
+        <field name="view_mode">calendar,tree,form</field>
         <field name="domain">[]</field>
-        <field name="context">{}</field>
-            
+        <field name="context">{}</field> 
     </record>
 
     <!-- Menus -->
@@ -32,7 +32,6 @@
         parent="club_management.club_management_root_menu"
         sequence="10"/>
         
-
     <menuitem
         id="club_calendar_menu"
         name="Calendar"
@@ -46,12 +45,11 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <field name="vat" position="after">
-                <field name="age" invisible="not private_info"/>
-                <field name="birthdate" invisible="not private_info" required="1"/>
+                <field name="age" />
+                <field name="birthdate" required="1"/>
             </field>
         </field>
     </record>
-
 
 
 </odoo>

@@ -5,11 +5,9 @@ from odoo.exceptions import UserError, ValidationError
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    age = fields.Integer(
-        compute='_set_age'
-    )
+    age = fields.Integer(compute='_set_age')
     birthdate = fields.Date()
-   
+    calendar_id = fields.Many2one('calendar.event')
 
     @api.depends('birthdate')
     def _set_age(self):

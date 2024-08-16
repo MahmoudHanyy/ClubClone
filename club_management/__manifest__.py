@@ -12,6 +12,7 @@
     ],
     'data': [
         'views/club_management_views.xml',
+        'views/club_calendar_views.xml',
     ],
     'installable': True,
     'application': True,
