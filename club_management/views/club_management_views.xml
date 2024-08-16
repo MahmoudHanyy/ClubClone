@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Action  -->
+    <record id="action_open_club_members_view" model="ir.actions.act_window">
+        <field name="name">Open Members Views</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <!-- Menus -->
+    <menuitem
+        id="club_management_root_menu"
+        name="Club"
+        web_icon="club_management,static/description/icon.png"
+        sequence="10"/>
+
+    <menuitem
+        id="members_menu"
+        name="Members"
+        action="club_management.action_open_club_members_view"
+        parent="club_management.club_management_root_menu"
+        sequence="10"/>
+
+
+</odoo>
